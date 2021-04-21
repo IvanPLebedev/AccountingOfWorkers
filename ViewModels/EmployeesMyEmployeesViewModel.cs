@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using AccountingOfWorkers.Data.Models;
 
-namespace AccountingOfWorkers.Data.interfaces
+namespace AccountingOfWorkers.ViewModels
 {
-    public interface IEmployees
+    public class EmployeesMyEmployeesViewModel
     {
-        IEnumerable<Employee> MyEmployees { get; }
+        public IEnumerable<Employee> GetMyEmployees { get; set; }
     }
 }

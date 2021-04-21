@@ -6,7 +6,7 @@ using AccountingOfWorkers.Data.Models;
 
 namespace AccountingOfWorkers.Data.interfaces
 {
-    interface IWorkingDays
+    public interface IWorkingDays
     {
         public IEnumerable<WorkingDay> GetWorkingDays(int employeeId);
     }
