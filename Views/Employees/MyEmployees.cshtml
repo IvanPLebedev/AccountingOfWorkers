@@ -1,12 +1,14 @@
 ﻿<h1> Мои работники:</h1>
-@{
-    foreach (var employee in Model.GetMyEmployees)
-    {
-        <div>
-            <h2> Фамилия: @employee.FirstName</h2>
-            <h2> Имя: @employee.Name</h2>
-            <h2> Телефон: @employee.PhoneNumber</h2>
-            <h2> </h2>
-        </div>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var employee in Model.GetMyEmployees)
+        {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="/img/worker.jpg" alt="@employee.Name"/>
+                <h2> Фамилия: @employee.FirstName</h2>
+                <h2> Имя: @employee.Name</h2>
+                <p> Телефон: @employee.PhoneNumber</p>
+            </div>
+        }
     }
-}
+</div>
