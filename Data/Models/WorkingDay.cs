@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,6 +15,6 @@ namespace AccountingOfWorkers.Data.Models
         public string Desc { get; set; }
 
         public int EmployeeId { get; set; }
-        //public virtual Employee Employee { get; set; }
+        //public virtual Employees Employees { get; set; }
     }
 }
