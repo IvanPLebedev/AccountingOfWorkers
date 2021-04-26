@@ -8,21 +8,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AccountingOfWorkers.Controllers
 {
-    public class EmployeesController: Controller
+    public class HomeController: Controller
     {
         private readonly IEmployees _employees;
-        private readonly IWorkingDays _workingDays;
 
-        public EmployeesController(IEmployees employees, IWorkingDays workingDays)
+        public HomeController(IEmployees employees)
         {
             _employees = employees;
-            _workingDays = workingDays;
         }
 
-        public ViewResult MyEmployees()
+        public ViewResult Index()
         {
-            EmployeesMyEmployeesViewModel model = new EmployeesMyEmployeesViewModel();
-            model.GetMyEmployees = _employees.MyEmployees;
+            HomeViewModel model = new HomeViewModel();
+            model.MyEmployees = _employees.MyEmployees;
+            Console.WriteLine("homeController");
             return View(model);
         }
     }

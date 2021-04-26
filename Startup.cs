@@ -12,7 +12,7 @@ namespace AccountingOfWorkers
 {
     public class Startup
     {
-        private IConfigurationRoot _confString;
+        private readonly IConfigurationRoot _confString;
 
         public Startup(IHostEnvironment hostEnvironment)
         {
@@ -29,7 +29,10 @@ namespace AccountingOfWorkers
                 .UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<IEmployees, EmployeeRepository>();
             services.AddTransient<IWorkingDays, WorkingDayRepository>();
+
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +41,7 @@ namespace AccountingOfWorkers
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
             DBObjects.Initial(app);

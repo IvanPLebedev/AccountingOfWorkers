@@ -6,8 +6,8 @@ using AccountingOfWorkers.Data.Models;
 
 namespace AccountingOfWorkers.ViewModels
 {
-    public class EmployeesMyEmployeesViewModel
+    public class HomeViewModel
     {
-        public IEnumerable<Employee> GetMyEmployees { get; set; }
+        public IEnumerable<Employee> MyEmployees { get; set; }
     }
 }
